@@ -1,3 +1,5 @@
+![Need for Speed Underground reverse engineering cover](docs/cover.png)
+
 # NFSU1 `Speed.exe` research dump
 
 Ghidra pseudo-C for about **10,000 functions** from PC *Need for Speed Underground*, plus a frozen **byte-match report**.
