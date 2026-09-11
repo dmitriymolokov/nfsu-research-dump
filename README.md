@@ -86,6 +86,14 @@ So: you have a **full function list and bodies to read**, and a **small high-con
 - [SpeedReflect/Binary](https://github.com/SpeedReflect/Binary) — BIN/BUN/LZC editor
 - Widescreen / Extra Options / Unlimiter / SilentPatch — runtime mods; this dump is documentation, not a competitor
 
+## Buy me a beer
+
+If this dump saved you time, a beer is welcome. **USDT on TRON (TRC-20) only** — not ERC-20, not BEP-20.
+
+```
+THobRFSAg2rxRDyTWiEv4e3WA8ogiCsm4m
+```
+
 ## License
 
 See [`DISCLAIMER.md`](DISCLAIMER.md). Original game © Electronic Arts. Research notes in this repo are provided as-is for interoperability research and modding documentation.
