@@ -1,0 +1,2 @@
+/* spd-match: close pct=82.26 flags=/O2 /c /nologo /TC method=m39 source=m39/4.1.6-control100/va_00437FA0 */
+extern float _DAT_006f0898; extern float _DAT_006b79b4; void __stdcall FUN_00437fa0(void* p, int dummy) { float* pf = (float*)((char*)p + 0x78); if (_DAT_006f0898 - *pf > _DAT_006b79b4) { int* pInt = *(int**)((char*)p + 4); int base = *(int*)((char*)pInt + 0x30); *(int*)(base + 0x1dc) = 0; *(int*)(base + 0x1e4) = 0; *(int*)(base + 0x1e0) = 0; *(short*)(base + 0x1d0) = 0; } }

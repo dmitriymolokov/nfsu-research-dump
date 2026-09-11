@@ -1,0 +1,5 @@
+/* spd-match: far pct=39.84 flags=/O2 /c /nologo /TC method=m39 source=m39/m39/va_0063ABD0 */
+/* Decompiled from Speed.exe @ 0063abd0 */
+/* Module: EAGL */
+/* Ghidra DecompileAll */
+typedef unsigned long undefined4; typedef unsigned short undefined2; extern void *DAT_006e75e8; extern char *DAT_006e75f4; extern undefined2 DAT_006bbc04; extern char *DAT_006e7600; extern void __cdecl FUN_0063f210(void *, int); extern void __cdecl FUN_0063f1b0(void *, int *, int); int __cdecl FUN_0063abd0(int *param_1) { char *pcVar2; char *pcVar3; char cVar1; if (*param_1 < 0x28) { FUN_0063f210(&DAT_006e75e8, 0x28); } FUN_0063f1b0(&DAT_006e75e8, param_1, *param_1); if (DAT_006e75f4 != 0) { pcVar2 = DAT_006e75f4; do { cVar1 = *pcVar2; pcVar2++; } while (cVar1 != 0); cVar1 = *DAT_006e75f4; if (cVar1 >= 'a' && cVar1 <= 'z') { *DAT_006e75f4 = cVar1 - 0x20; } if (DAT_006e75f4[pcVar2 - DAT_006e75f4 - 2] != '\\') { pcVar3 = pcVar2 - 1; *(undefined2 *)pcVar3 = DAT_006bbc04; } if (DAT_006e75e8 == (void *)0x28) { cVar1 = *DAT_006e7600; if (cVar1 >= 'a' && cVar1 <= 'z') { *DAT_006e7600 = cVar1 - 0x20; } } } return 1; }

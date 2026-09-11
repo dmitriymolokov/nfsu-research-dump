@@ -1,0 +1,100 @@
+/* spd-match: far pct=5.53 flags=/O1 /c /nologo /TC method=m39 build_strip source=m39/3.9.26.5/va_0048AD90 */
+/* M3.9.26.5: Ghidra EAX local → __fastcall typed arg (build strip; % may drop). */
+#include "ghidra_compat.h"
+
+extern int _DAT_006cc7bc;
+void __fastcall FUN_0048ad90(float * obj, float *param_1, float *param_2, undefined4 param_3, float param_4)
+
+{
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  float fVar8;
+  float fVar9;
+  float fVar10;
+  float fVar11;
+  float fVar12;
+  float fVar13;
+  float fVar14;
+  float fVar15;
+  float fVar16;
+  float fVar17;
+  float fVar18;
+  float fVar19;
+  float fVar20;
+  float fVar21;
+  float fVar22;
+  float fVar23;
+
+  fVar23 = _DAT_006cc7bc - param_4;
+  fVar1 = obj[1];
+  fVar2 = param_1[1];
+  fVar3 = obj[2];
+  fVar4 = param_1[2];
+  fVar5 = *param_1;
+  fVar6 = *obj;
+  param_2[3] = param_4 * param_1[3] + fVar23 * obj[3];
+  *param_2 = fVar23 * fVar6 + param_4 * fVar5;
+  param_2[1] = param_4 * fVar2 + fVar23 * fVar1;
+  param_2[2] = param_4 * fVar4 + fVar23 * fVar3;
+  fVar1 = param_1[5];
+  fVar2 = param_1[6];
+  fVar3 = param_1[8];
+  fVar4 = param_1[9];
+  fVar5 = param_1[10];
+  fVar6 = param_1[0xc];
+  fVar7 = param_1[0xd];
+  fVar8 = param_1[0xe];
+  fVar9 = param_1[0x10];
+  fVar10 = param_1[0x11];
+  fVar11 = param_1[0x12];
+  fVar12 = param_1[0x14];
+  fVar13 = param_1[0x15];
+  fVar14 = param_1[0x16];
+  fVar15 = param_1[0x18];
+  fVar16 = param_1[0x19];
+  fVar17 = param_1[0x1a];
+  fVar18 = param_1[0x1c];
+  fVar19 = param_1[0x1d];
+  fVar20 = param_1[0x1e];
+  fVar21 = obj[5];
+  fVar22 = obj[6];
+  param_2[4] = fVar23 * obj[4] + param_4 * param_1[4];
+  param_2[5] = fVar23 * fVar21 + fVar1 * param_4;
+  param_2[6] = fVar23 * fVar22 + fVar2 * param_4;
+  fVar1 = obj[9];
+  fVar2 = obj[10];
+  param_2[8] = fVar23 * obj[8] + param_4 * fVar3;
+  param_2[9] = fVar23 * fVar1 + fVar4 * param_4;
+  param_2[10] = fVar23 * fVar2 + fVar5 * param_4;
+  fVar1 = obj[0xd];
+  fVar2 = obj[0xe];
+  param_2[0xc] = fVar23 * obj[0xc] + param_4 * fVar6;
+  param_2[0xd] = fVar23 * fVar1 + fVar7 * param_4;
+  param_2[0xe] = fVar23 * fVar2 + fVar8 * param_4;
+  fVar1 = obj[0x11];
+  fVar2 = obj[0x12];
+  param_2[0x10] = fVar23 * obj[0x10] + param_4 * fVar9;
+  param_2[0x11] = fVar23 * fVar1 + fVar10 * param_4;
+  param_2[0x12] = fVar23 * fVar2 + fVar11 * param_4;
+  fVar1 = obj[0x15];
+  fVar2 = obj[0x16];
+  param_2[0x14] = fVar23 * obj[0x14] + param_4 * fVar12;
+  param_2[0x15] = fVar23 * fVar1 + fVar13 * param_4;
+  param_2[0x16] = fVar23 * fVar2 + fVar14 * param_4;
+  fVar1 = obj[0x19];
+  fVar2 = obj[0x1a];
+  param_2[0x18] = fVar23 * obj[0x18] + param_4 * fVar15;
+  param_2[0x19] = fVar23 * fVar1 + fVar16 * param_4;
+  param_2[0x1a] = fVar23 * fVar2 + fVar17 * param_4;
+  fVar1 = obj[0x1d];
+  fVar2 = obj[0x1e];
+  param_2[0x1c] = fVar23 * obj[0x1c] + param_4 * fVar18;
+  param_2[0x1d] = fVar23 * fVar1 + fVar19 * param_4;
+  param_2[0x1e] = fVar23 * fVar2 + fVar20 * param_4;
+  return;
+}

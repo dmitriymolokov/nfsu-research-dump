@@ -1,0 +1,2 @@
+/* spd-match: far pct=44.19 flags=/O1 /c /nologo /TC method=m39 source=m39/m39/va_0062B530 */
+extern void** DAT_0070d364; void FUN_0062b530(void* p) { unsigned short count = *(unsigned short*)((char*)p + 8); int i = (int)count - 1; if (i >= 0) { void** p_entry = (void**)((char*)p + 12 + (i * 4)); int j = i + 1; void** vtable = (void**)*DAT_0070d364; do { void* val = *p_entry; ((void (__stdcall*)(void*))vtable[12])(val); p_entry--; j--; } while (j != 0); } }

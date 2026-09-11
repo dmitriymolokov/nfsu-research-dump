@@ -1,0 +1,127 @@
+/* Decompiled from Speed.exe @ 005f4338 */
+/* Module: Loader */
+/* Ghidra DecompileAll */
+
+
+undefined8 * FUN_005f4338(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
+
+{
+  undefined4 uVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  undefined8 uVar4;
+  undefined8 uVar5;
+  undefined8 uVar6;
+  undefined8 uVar7;
+  undefined8 uVar8;
+  undefined8 uVar9;
+  
+  uVar1 = (undefined4)((ulonglong)*param_2 >> 0x20);
+  uVar2 = (undefined4)((ulonglong)param_2[1] >> 0x20);
+  uVar3 = (undefined4)*param_2;
+  uVar6 = CONCAT44(uVar3,uVar3);
+  uVar3 = (undefined4)param_2[1];
+  uVar9 = CONCAT44(uVar3,uVar3);
+  uVar7 = PackedFloatingMUL(*param_3,uVar6);
+  uVar5 = CONCAT44(uVar1,uVar1);
+  uVar4 = PackedFloatingMUL(uVar6,param_3[1]);
+  uVar8 = PackedFloatingMUL(param_3[2],uVar5);
+  uVar6 = CONCAT44(uVar2,uVar2);
+  uVar5 = PackedFloatingMUL(uVar5,param_3[3]);
+  uVar7 = PackedFloatingADD(uVar8,uVar7);
+  uVar8 = PackedFloatingMUL(param_3[4],uVar9);
+  uVar4 = PackedFloatingADD(uVar5,uVar4);
+  uVar5 = PackedFloatingMUL(uVar9,param_3[5]);
+  uVar9 = PackedFloatingADD(uVar8,uVar7);
+  uVar7 = PackedFloatingMUL(param_3[6],uVar6);
+  uVar4 = PackedFloatingADD(uVar4,uVar5);
+  uVar6 = PackedFloatingMUL(uVar6,param_3[7]);
+  uVar7 = PackedFloatingADD(uVar7,uVar9);
+  uVar5 = param_2[2];
+  uVar9 = PackedFloatingADD(uVar6,uVar4);
+  uVar6 = param_2[3];
+  *param_1 = uVar7;
+  uVar4 = *param_3;
+  param_1[1] = uVar9;
+  uVar1 = (undefined4)((ulonglong)uVar5 >> 0x20);
+  uVar2 = (undefined4)((ulonglong)uVar6 >> 0x20);
+  uVar3 = (undefined4)uVar5;
+  uVar9 = CONCAT44(uVar3,uVar3);
+  uVar3 = (undefined4)uVar6;
+  uVar7 = CONCAT44(uVar3,uVar3);
+  uVar8 = PackedFloatingMUL(uVar4,uVar9);
+  uVar5 = CONCAT44(uVar1,uVar1);
+  uVar4 = PackedFloatingMUL(uVar9,param_3[1]);
+  uVar9 = PackedFloatingMUL(param_3[2],uVar5);
+  uVar6 = CONCAT44(uVar2,uVar2);
+  uVar5 = PackedFloatingMUL(uVar5,param_3[3]);
+  uVar9 = PackedFloatingADD(uVar9,uVar8);
+  uVar8 = PackedFloatingMUL(param_3[4],uVar7);
+  uVar4 = PackedFloatingADD(uVar5,uVar4);
+  uVar5 = PackedFloatingMUL(uVar7,param_3[5]);
+  uVar9 = PackedFloatingADD(uVar8,uVar9);
+  uVar7 = PackedFloatingMUL(param_3[6],uVar6);
+  uVar4 = PackedFloatingADD(uVar4,uVar5);
+  uVar6 = PackedFloatingMUL(uVar6,param_3[7]);
+  uVar7 = PackedFloatingADD(uVar7,uVar9);
+  uVar5 = param_2[4];
+  uVar9 = PackedFloatingADD(uVar6,uVar4);
+  uVar6 = param_2[5];
+  param_1[2] = uVar7;
+  uVar4 = *param_3;
+  param_1[3] = uVar9;
+  uVar1 = (undefined4)((ulonglong)uVar5 >> 0x20);
+  uVar2 = (undefined4)((ulonglong)uVar6 >> 0x20);
+  uVar3 = (undefined4)uVar5;
+  uVar9 = CONCAT44(uVar3,uVar3);
+  uVar3 = (undefined4)uVar6;
+  uVar7 = CONCAT44(uVar3,uVar3);
+  uVar8 = PackedFloatingMUL(uVar4,uVar9);
+  uVar5 = CONCAT44(uVar1,uVar1);
+  uVar4 = PackedFloatingMUL(uVar9,param_3[1]);
+  uVar9 = PackedFloatingMUL(param_3[2],uVar5);
+  uVar6 = CONCAT44(uVar2,uVar2);
+  uVar5 = PackedFloatingMUL(uVar5,param_3[3]);
+  uVar9 = PackedFloatingADD(uVar9,uVar8);
+  uVar8 = PackedFloatingMUL(param_3[4],uVar7);
+  uVar4 = PackedFloatingADD(uVar5,uVar4);
+  uVar5 = PackedFloatingMUL(uVar7,param_3[5]);
+  uVar9 = PackedFloatingADD(uVar8,uVar9);
+  uVar7 = PackedFloatingMUL(param_3[6],uVar6);
+  uVar4 = PackedFloatingADD(uVar4,uVar5);
+  uVar6 = PackedFloatingMUL(uVar6,param_3[7]);
+  uVar7 = PackedFloatingADD(uVar7,uVar9);
+  uVar5 = param_2[6];
+  uVar9 = PackedFloatingADD(uVar6,uVar4);
+  uVar6 = param_2[7];
+  param_1[4] = uVar7;
+  uVar4 = *param_3;
+  param_1[5] = uVar9;
+  uVar1 = (undefined4)((ulonglong)uVar5 >> 0x20);
+  uVar2 = (undefined4)((ulonglong)uVar6 >> 0x20);
+  uVar3 = (undefined4)uVar5;
+  uVar9 = CONCAT44(uVar3,uVar3);
+  uVar3 = (undefined4)uVar6;
+  uVar7 = CONCAT44(uVar3,uVar3);
+  uVar8 = PackedFloatingMUL(uVar4,uVar9);
+  uVar5 = CONCAT44(uVar1,uVar1);
+  uVar4 = PackedFloatingMUL(uVar9,param_3[1]);
+  uVar9 = PackedFloatingMUL(param_3[2],uVar5);
+  uVar6 = CONCAT44(uVar2,uVar2);
+  uVar5 = PackedFloatingMUL(uVar5,param_3[3]);
+  uVar9 = PackedFloatingADD(uVar9,uVar8);
+  uVar8 = PackedFloatingMUL(param_3[4],uVar7);
+  uVar4 = PackedFloatingADD(uVar5,uVar4);
+  uVar5 = PackedFloatingMUL(uVar7,param_3[5]);
+  uVar9 = PackedFloatingADD(uVar8,uVar9);
+  uVar7 = PackedFloatingMUL(param_3[6],uVar6);
+  uVar5 = PackedFloatingADD(uVar4,uVar5);
+  uVar6 = PackedFloatingMUL(uVar6,param_3[7]);
+  uVar4 = PackedFloatingADD(uVar7,uVar9);
+  uVar5 = PackedFloatingADD(uVar6,uVar5);
+  param_1[6] = uVar4;
+  param_1[7] = uVar5;
+  FastExitMediaState();
+  return param_1;
+}
+

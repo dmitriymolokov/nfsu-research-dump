@@ -1,0 +1,2 @@
+/* spd-match: far pct=23.60 flags=/O1 /c /nologo /TC method=m39 source=m39/m39/va_00604EE2 */
+extern int DAT_006df548; int __stdcall FUN_00604ee2(int param_1, int *param_2, unsigned int param_3) { unsigned int i = 0; if (param_3 == 0) return 0; do { int *piVar3 = &DAT_006df548; int *piVar2 = param_2; int bVar1 = 1; int iVar4 = 4; do { if (*(int *)((param_1 - (int)param_2) + (int)piVar2) != *piVar3 && *piVar2 != -1) bVar1 = 0; piVar3++; piVar2++; iVar4--; } while (iVar4 != 0); if (bVar1) return 1; i++; } while (i < param_3); return 0; }

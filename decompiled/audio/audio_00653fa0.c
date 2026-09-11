@@ -1,0 +1,2 @@
+/* spd-match: far pct=23.26 flags=/O1 /c /nologo /TC method=m39 source=m39/4.1.G.1-filter100/va_00653FA0 */
+extern unsigned short DAT_00714010; extern int* DAT_00714014; int __cdecl FUN_00653fa0(int param_1) { int i = 0; int limit = (int)DAT_00714010; if (limit > 0) { do { int* entry = (int*)(DAT_00714014 + (i * 2)); if (*entry == 0) { *entry = param_1; return (int)entry; } i++; } while (i < limit); } return 0; }

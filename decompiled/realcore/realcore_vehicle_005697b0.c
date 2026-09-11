@@ -1,0 +1,9 @@
+/* spd-match: far pct=26.37 flags=/Ob2 /c /nologo /TC method=m39 source=m39/m39/va_005697B0 */
+/* Decompiled from Speed.exe @ 005697b0 */
+/* Module: Realcore_Vehicle */
+/* Ghidra DecompileAll */
+
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+typedef unsigned long dword; typedef unsigned char byte; extern void *FUN_00566dc0(int, const char *, int); extern int DAT_0073d814; extern void **DAT_0073d81c; extern int *DAT_0073d818; extern int *DAT_00734610; extern int DAT_0073d720, DAT_0073d724, DAT_0073d728, DAT_0073d72c, DAT_0073d730, DAT_0073d734, DAT_0073d738, DAT_0073d73c, DAT_0073d740, DAT_0073d744, DAT_0073d748, DAT_0073d74c, DAT_0073d750, DAT_0073d754, DAT_0073d758, DAT_0073d75c; extern int DAT_0073ca80, DAT_0073ca84, DAT_0073ca88, DAT_0073ca8c, DAT_0073ca98, DAT_0073ca9c, DAT_0073ca90, DAT_0073ca94, DAT_0073caa8, DAT_0073caac, DAT_0073caa0; void FUN_005697b0(void) { int *p; int *pi; byte *s; int h; p = (int *)FUN_00566dc0(20, "CarEmitterPositionSlotPool", 0); if (p != (int *)0 && DAT_0073d814 == 1) { p[1] = (int)*DAT_0073d81c; *DAT_0073d81c = p; *p = (int)DAT_0073d818; } DAT_00734610 = p; pi = (int *)0x6f1bcc; do { s = (byte *)(*(pi - 1)); h = -1; while (*s) { h = h * 33 + (unsigned char)*s; s++; } *pi = h; pi += 2; } while ((unsigned int)pi < 0x6f1cb4); DAT_0073d720 = 0x3f800000; DAT_0073d724 = 0; DAT_0073d728 = 0; DAT_0073d72c = 0; DAT_0073d730 = 0; DAT_0073d734 = 0x3f800000; DAT_0073d738 = 0; DAT_0073d73c = 0; DAT_0073d740 = 0; DAT_0073d744 = 0; DAT_0073d748 = 0x3f800000; DAT_0073d74c = 0; DAT_0073d750 = 0; DAT_0073d754 = 0; DAT_0073d758 = 0; DAT_0073d75c = 0x3f800000; DAT_0073ca80 = 0; DAT_0073ca84 = 0; DAT_0073ca88 = 0; DAT_0073ca8c = 0x3f800000; DAT_0073ca98 = 0; DAT_0073ca9c = 0; DAT_0073ca90 = 0x3f800000; DAT_0073ca94 = 0x3f800000; DAT_0073caa8 = 0x3f800000; DAT_0073caac = 0; DAT_0073caa0 = 0x80808080; }
+

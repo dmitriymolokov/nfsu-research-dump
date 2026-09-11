@@ -1,0 +1,2 @@
+/* spd-match: far pct=16.13 flags=/O2 /c /nologo /TC method=m39 source=m39/m39/va_0062BC20 */
+extern float _DAT_006a8138; extern float _DAT_006ccd40; void __stdcall FUN_0062b9b0(float* p, int val); void FUN_0062bc20(float** pp, int arg2) { float* p; float f1; float f2; float f3; float f_const; p = *pp; f_const = _DAT_006a8138; f1 = *p; *pp = p + 1; f1 = f1 * f_const * _DAT_006ccd40; p = *pp; f2 = *p; *pp = p + 1; f2 = f2 * f_const; p = *pp; f3 = *p; *pp = p + 1; f3 = f3 * f_const; { float vals[3]; vals[0] = f1; vals[1] = f2; vals[2] = f3; FUN_0062b9b0(vals, arg2); } }

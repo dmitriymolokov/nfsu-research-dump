@@ -1,0 +1,30 @@
+/* Decompiled from Speed.exe @ 005829e0 */
+/* Module: Loader */
+/* Ghidra DecompileAll */
+
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __thiscall FUN_005829e0(undefined4 param_1,float param_2)
+
+{
+  float fVar1;
+  float fVar2;
+  float10 fVar3;
+  float fVar4;
+  
+  fVar3 = (float10)FUN_004387e0(param_2,param_1);
+  fVar4 = (float)fVar3;
+  if ((float10)param_2 < fVar3) {
+    fVar4 = fVar4 - _DAT_006cc7bc;
+  }
+  param_2 = param_2 - fVar4;
+  fVar1 = param_2 * param_2;
+  fVar2 = fVar1 * param_2;
+  FUN_005828e0(fVar4,(((fVar1 + fVar1) - fVar2) - param_2) * _DAT_006cc7dc,
+               ((_DAT_006cc7ac * fVar2 - fVar1 * _DAT_006cc954) + _DAT_006ccc00) * _DAT_006cc7dc,
+               ((fVar1 * _DAT_006cc908 - _DAT_006cc7ac * fVar2) + param_2) * _DAT_006cc7dc,
+               (fVar2 - fVar1) * _DAT_006cc7dc);
+  return;
+}
+

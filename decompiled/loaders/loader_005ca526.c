@@ -1,0 +1,6 @@
+/* spd-match: far pct=9.68 flags=/O1 /c /nologo /TP method=m39 source=m39/4.1.G.2-n5/va_005CA526 */
+/* Decompiled from Speed.exe @ 005ca526 */
+/* Module: Loader */
+/* Ghidra DecompileAll */
+typedef unsigned int uint; typedef unsigned char byte; struct Loader { int gap1[6]; int count; int ptr1; int gap2[3]; int ptr2; }; int __stdcall FUN_005ca526(struct Loader *pThis, byte *param_2) { uint uVar1 = (uint)param_2; if ((uVar1 & 0xFFFF) == uVar1) return 0; if ((uVar1 & 0x7FFFFFFF) != uVar1) return 0; uint local_8 = 0; if (pThis->count == 0) return 0; int *piVar6 = (int *)(pThis->ptr1 + 0x20); do { int *piVar3 = (int *)(pThis->ptr2 + *piVar6); byte *pbVar5 = param_2; if (*piVar3 != 0) { byte *pbVar4 = (byte *)(piVar3 + 1); if (pbVar5 != 0) { do { byte b1 = *pbVar4; byte b2 = *pbVar5; if (b1 != b2) { pbVar5 = (byte *)(b1 < b2 ? -1 : 1); goto done; } if (b1 == 0) break; b1 = pbVar4[1]; b2 = pbVar5[1]; if (b1 != b2) { pbVar5 = (byte *)(b1 < b2 ? -1 : 1); goto done; } pbVar4 += 2; pbVar5 += 2; } while(1); pbVar5 = 0; } } done: if (pbVar5 == 0) break; local_8++; piVar6 += 0x2b; } while (local_8 < (uint)pThis->count); if ((uint)pThis->count == local_8) return 0; return local_8 * 0xac + pThis->ptr1; }
+

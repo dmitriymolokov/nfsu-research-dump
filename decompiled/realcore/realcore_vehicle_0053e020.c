@@ -1,0 +1,3 @@
+/* spd-match: far pct=39.02 flags=/O1 /Gr /c /nologo /TC method=m39 source=m39/m39/va_0053E020 */
+#include <windows.h>
+extern int* g_72f5f8; extern int* g_72f5fc; extern int g_7355b4; extern int g_7355ac; extern int g_7355b8; extern int g_7355c0; extern int* g_73559c; extern int* g_73d814; extern int* g_73d81c; extern int g_73d818; extern int* __stdcall FUN_00566dc0(int, char*, int); extern int* __stdcall FUN_0067121a(int); void FUN_0053e020(void) { int* eax; eax = FUN_0067121a(0x64000); g_72f5f8 = eax; eax = FUN_0067121a(0x64000); g_72f5fc = eax; g_7355b4 = (int)g_72f5f8; g_7355ac = 0x64000; g_7355b8 = (int)g_72f5f8 + 0x64000; g_7355c0 = 0; g_73559c = FUN_00566dc0(0x110, (char*)0x6bd88c, 0); }

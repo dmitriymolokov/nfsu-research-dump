@@ -1,0 +1,2 @@
+/* spd-match: far pct=44.44 flags=/O1 /c /nologo /TC method=m39 source=m39/m39/va_006227C0 */
+extern int DAT_0070a414; extern void *DAT_00709d80; void FUN_006227c0(int *param_1) { int iVar1; void **vtable; void (__stdcall *func)(void *, int); iVar1 = *param_1; if (DAT_0070a414 != iVar1) { DAT_0070a414 = iVar1; vtable = *(void ***)DAT_00709d80; func = (void (__stdcall *)(void *, int))vtable[88]; func(DAT_00709d80, iVar1); } }

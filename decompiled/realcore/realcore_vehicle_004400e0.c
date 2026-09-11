@@ -1,0 +1,2 @@
+/* spd-match: far pct=10.78 flags=/O1 /c /nologo /TC method=m39 source=m39/4.1.G.45-s0/va_004400E0 */
+extern float _DAT_006cc8a8; extern float DAT_006cc7a4; float __fastcall FUN_004400e0(int ecx, float *edx) { float a, b, c, d, f1, f2; float *p = (float *)ecx; a = *edx - p[12]; b = p[17] - p[13]; c = p[16] - p[12]; d = edx[1] - p[13]; f1 = (a * b) - (c * d); if (f1 >= _DAT_006cc8a8 && f1 < DAT_006cc7a4) return f1; a = *edx - p[16]; b = p[21] - p[17]; c = p[20] - p[16]; d = edx[1] - p[17]; f2 = (a * b) - (c * d); return (f1 > f2) ? f1 : f2; }

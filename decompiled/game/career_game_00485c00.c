@@ -1,0 +1,564 @@
+/* spd-match: far pct=7.70 flags=/O2 /Gr /c /nologo /TC method=m4_13_callee_stdcall_v2 source=m4_13/4.1.3/va_00485C00 */
+/* Pass A — minimal Ghidra → MSVC6 typedefs (not from speed.exe) */
+/* /TC: () stubs = unspecified arity. /TP: use (...) stubs; bool is keyword. */
+typedef unsigned char   undefined;
+typedef unsigned char   undefined1;
+typedef unsigned short  undefined2;
+typedef unsigned int    undefined3; /* odd-width Ghidra; soft → 32-bit */
+typedef unsigned int    undefined4;
+typedef unsigned __int64 undefined8;
+typedef unsigned char   byte;
+typedef unsigned char   uchar;
+typedef unsigned short  ushort;
+typedef unsigned int    uint;
+typedef unsigned long   ulong;
+typedef unsigned int    size_t; /* MSVC6 /TC often lacks stddef in our stub TU */
+typedef __int64         longlong;
+typedef unsigned __int64 ulonglong;
+typedef float           float10; /* Pass A cheap map; real float10 is 80-bit */
+/* Odd-width Ghidra ints (CONCAT31 packs); soft-map to 32-bit. */
+typedef unsigned int    uint3;
+typedef int             int3;
+typedef unsigned int    uint5;
+typedef int             int5;
+typedef unsigned int    uint6;
+typedef int             int6;
+typedef unsigned int    uint7;
+typedef int             int7;
+typedef int             code(); /* M3.75.5 P0: was void(void) — assign/call → C2120 */
+#ifndef __cplusplus
+typedef int             bool;
+#ifndef true
+#define true 1
+#define false 0
+#endif
+#endif
+/* Ghidra decompiler macros — soft-compat (PIECE/CARRY semantics; not MSVC idioms). */
+#ifndef NAN
+#define NAN ((float)(1e300 * 1e300))
+#endif
+/* CONCATxy(hi, lo): hi = x bytes MSB, lo = y bytes LSB. */
+#define CONCAT11(a,b) ((unsigned short)((((unsigned short)(unsigned char)(a))<<8)|((unsigned char)(b))))
+#define CONCAT12(a,b) ((unsigned int)((((unsigned int)(unsigned char)(a))<<16)|((unsigned short)(b))))
+#define CONCAT13(a,b) ((unsigned int)((((unsigned int)(unsigned char)(a))<<24)|(((unsigned int)(b))&0x00ffffffu)))
+#define CONCAT14(a,b) ((unsigned __int64)((((unsigned __int64)(unsigned char)(a))<<32)|((unsigned int)(b))))
+#define CONCAT15(a,b) ((unsigned __int64)((((unsigned __int64)(unsigned char)(a))<<40)|(((unsigned __int64)(b))&((unsigned __int64)0x000000ffffffffff))))
+#define CONCAT16(a,b) ((unsigned __int64)((((unsigned __int64)(unsigned char)(a))<<48)|(((unsigned __int64)(b))&((unsigned __int64)0x0000ffffffffffff))))
+#define CONCAT17(a,b) ((unsigned __int64)((((unsigned __int64)(unsigned char)(a))<<56)|(((unsigned __int64)(b))&((unsigned __int64)0x00ffffffffffffff))))
+#define CONCAT21(a,b) ((unsigned int)((((unsigned int)(unsigned short)(a))<<8)|((unsigned char)(b))))
+#define CONCAT22(a,b) ((unsigned int)((((unsigned int)(unsigned short)(a))<<16)|((unsigned short)(b))))
+#define CONCAT24(a,b) ((unsigned __int64)((((unsigned __int64)(unsigned short)(a))<<32)|((unsigned int)(b))))
+#define CONCAT26(a,b) ((unsigned __int64)((((unsigned __int64)(unsigned short)(a))<<48)|(((unsigned __int64)(b))&((unsigned __int64)0x0000ffffffffffff))))
+#define CONCAT28(a,b) ((unsigned __int64)(b)) /* odd width; keep lo as soft fallback */
+#define CONCAT31(a,b) ((unsigned int)((((unsigned int)(a))<<8)|((unsigned char)(b))))
+#define CONCAT41(a,b) ((unsigned __int64)((((unsigned __int64)(unsigned int)(a))<<8)|((unsigned char)(b))))
+#define CONCAT44(a,b) ((unsigned __int64)((((unsigned __int64)(unsigned int)(a))<<32)|((unsigned int)(b))))
+/* CARRY4: unsigned carry-out of 32-bit add. SBORROW4: signed overflow on sub. */
+#define CARRY4(a,b) ((unsigned int)(a) > (0xffffffffu - (unsigned int)(b)))
+#define SBORROW4(a,b) ((int)((((unsigned int)(a)^(unsigned int)(b))&((unsigned int)(a)^(unsigned int)((a)-(b))))>>31))
+#define ZEXT416(x) ((unsigned __int64)(unsigned int)(x))
+#define ZEXT816(x) ((unsigned __int64)(x))
+/* SUBPIECE: drop low n bytes, keep output width. */
+#define SUB104(x,n) ((unsigned int)(((unsigned __int64)(x))>>(8*(n))))
+#define SUB161(x,n) ((unsigned char)(((unsigned __int64)(x))>>(8*(n))))
+/* Odd-width / soft Ghidra types (M3.75.3 cheap). */
+typedef unsigned int    undefined6;
+typedef signed char     sbyte;
+typedef unsigned char   unkbyte10;
+typedef unsigned int    unkuint10;
+typedef unsigned int    uintptr_t;
+typedef int             intptr_t;
+#ifndef _WCHAR_T_DEFINED
+typedef unsigned short  wchar_t;
+#define _WCHAR_T_DEFINED
+#endif
+/* Ghidra math macros (M3.75.3 C2065 ABS/SQRT/ROUND). */
+double __cdecl sqrt(double);
+#define ABS(x) (((x) < 0) ? -(x) : (x))
+#define SQRT(x) ((float)sqrt((double)(x)))
+#define ROUND(x) ((int)(((x) >= 0.0) ? ((x) + 0.5) : ((x) - 0.5)))
+void *__cdecl swi(int);
+unsigned int MXCSR; /* SSE MXCSR soft register */
+/* CRT long-long helpers — compile stubs (CRT-as-fn bodies deferred). */
+unsigned __int64 __cdecl __allmul(void);
+unsigned __int64 __cdecl __aulldiv(void);
+unsigned __int64 __cdecl __alldiv(void);
+unsigned __int64 __fastcall __allshl(void);
+unsigned __int64 __fastcall __allshr(void);
+unsigned __int64 __cdecl __aullshr(void);
+void __fastcall __security_check_cookie(unsigned int _StackCookie);
+void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+
+typedef unsigned long   DWORD;
+typedef unsigned short  WORD;
+typedef unsigned char   BYTE;
+typedef int             BOOL;
+typedef char            CHAR;
+typedef unsigned short  WCHAR;
+typedef long            LONG;
+typedef unsigned long   ULONG;
+typedef unsigned int    UINT;
+typedef long            HRESULT;
+typedef void           *HANDLE;
+typedef void           *HWND;
+typedef void           *HINSTANCE;
+typedef void           *HMODULE;
+typedef void           *HKEY;
+typedef void           *HMENU;
+typedef void           *HFONT;
+typedef void           *HDC;
+typedef void           *HICON;
+typedef void           *HBRUSH;
+typedef void           *HPEN;
+typedef void           *HBITMAP;
+typedef void           *HPALETTE;
+typedef void           *HGDIOBJ;
+typedef void           *HLINE; /* rare Ghidra / FE alias seen in CE */
+struct _iobuf;
+typedef struct _iobuf FILE;
+typedef const char     *LPCSTR;
+typedef char           *LPSTR;
+typedef const void     *LPCVOID;
+typedef void           *LPVOID;
+typedef DWORD          *LPDWORD;
+typedef int             INT;
+typedef unsigned int    UINT_PTR;
+typedef long            LONG_PTR;
+typedef unsigned long   ULONG_PTR;
+typedef ULONG_PTR       SIZE_T;
+typedef struct tagRECT { long left, top, right, bottom; } RECT, tagRECT, *LPRECT;
+typedef struct _FILETIME { DWORD dwLowDateTime; DWORD dwHighDateTime; } FILETIME, _FILETIME;
+typedef LONG *PLONG;
+typedef WORD *LPWORD;
+typedef CHAR *LPCH;
+typedef BOOL *LPBOOL;
+typedef void *PVOID;
+typedef const WCHAR *LPCWSTR;
+typedef ULONG_PTR DWORD_PTR;
+typedef LONG LSTATUS;
+typedef void *HCURSOR;
+/* Ghidra often types 64-bit locals as LARGE_INTEGER for __all* helpers. */
+typedef union _LARGE_INTEGER {
+  struct { DWORD LowPart; LONG HighPart; } s;
+  struct { DWORD LowPart; LONG HighPart; } u;
+  __int64 QuadPart;
+} LARGE_INTEGER, *PLARGE_INTEGER;
+typedef DWORD FARPROC; /* soft; real FARPROC is FARPROC callback — compile-only */
+typedef struct _RTL_CRITICAL_SECTION {
+  void *DebugInfo; long LockCount; long RecursionCount;
+  HANDLE OwningThread; HANDLE LockSemaphore; DWORD SpinCount;
+} CRITICAL_SECTION, *LPCRITICAL_SECTION;
+typedef struct _SECURITY_ATTRIBUTES {
+  DWORD nLength; LPVOID lpSecurityDescriptor; BOOL bInheritHandle;
+} SECURITY_ATTRIBUTES, *LPSECURITY_ATTRIBUTES, _SECURITY_ATTRIBUTES;
+typedef struct _OSVERSIONINFOA {
+  DWORD dwOSVersionInfoSize; DWORD dwMajorVersion; DWORD dwMinorVersion;
+  DWORD dwBuildNumber; DWORD dwPlatformId; CHAR szCSDVersion[128];
+} OSVERSIONINFOA, *LPOSVERSIONINFOA, _OSVERSIONINFOA;
+typedef struct tagWNDCLASSEXA {
+  UINT cbSize; UINT style; void *lpfnWndProc; int cbClsExtra; int cbWndExtra;
+  HINSTANCE hInstance; HICON hIcon; HCURSOR hCursor; HBRUSH hbrBackground;
+  LPCSTR lpszMenuName; LPCSTR lpszClassName; HICON hIconSm;
+} WNDCLASSEXA;
+typedef struct _COMMTIMEOUTS {
+  DWORD ReadIntervalTimeout; DWORD ReadTotalTimeoutMultiplier;
+  DWORD ReadTotalTimeoutConstant; DWORD WriteTotalTimeoutMultiplier;
+  DWORD WriteTotalTimeoutConstant;
+} COMMTIMEOUTS, _COMMTIMEOUTS;
+typedef struct _TIME_ZONE_INFORMATION {
+  LONG Bias; WCHAR StandardName[32]; /* soft truncated layout */
+  DWORD StandardDate; LONG StandardBias; WCHAR DaylightName[32];
+  DWORD DaylightDate; LONG DaylightBias;
+} TIME_ZONE_INFORMATION, *LPTIME_ZONE_INFORMATION, _TIME_ZONE_INFORMATION;
+typedef struct _STARTUPINFOA {
+  DWORD cb; LPSTR lpReserved; LPSTR lpDesktop; LPSTR lpTitle;
+  DWORD dwX, dwY, dwXSize, dwYSize, dwXCountChars, dwYCountChars;
+  DWORD dwFillAttribute; DWORD dwFlags; WORD wShowWindow; WORD cbReserved2;
+  BYTE *lpReserved2; HANDLE hStdInput; HANDLE hStdOutput; HANDLE hStdError;
+} STARTUPINFOA, _STARTUPINFOA;
+typedef struct _WIN32_FIND_DATAA {
+  DWORD dwFileAttributes; FILETIME ftCreationTime; FILETIME ftLastAccessTime;
+  FILETIME ftLastWriteTime; DWORD nFileSizeHigh; DWORD nFileSizeLow;
+  DWORD dwReserved0; DWORD dwReserved1; CHAR cFileName[260]; CHAR cAlternateFileName[14];
+} WIN32_FIND_DATAA, _WIN32_FIND_DATAA;
+typedef struct _OVERLAPPED {
+  DWORD Internal; DWORD InternalHigh; DWORD Offset; DWORD OffsetHigh; HANDLE hEvent;
+} OVERLAPPED, *LPOVERLAPPED;
+typedef struct _SYSTEM_INFO {
+  DWORD dwOemId; DWORD dwPageSize; LPVOID lpMinimumApplicationAddress;
+  LPVOID lpMaximumApplicationAddress; DWORD dwActiveProcessorMask;
+  DWORD dwNumberOfProcessors; DWORD dwProcessorType; DWORD dwAllocationGranularity;
+  WORD wProcessorLevel; WORD wProcessorRevision;
+} SYSTEM_INFO, _SYSTEM_INFO;
+DWORD __stdcall SleepEx(DWORD, BOOL);
+DWORD __stdcall Sleep(DWORD);
+void __stdcall SetLastError(DWORD);
+DWORD __stdcall GetLastError(void);
+HWND __stdcall GetDesktopWindow(void);
+BOOL __stdcall SetRect(RECT *, int, int, int, int);
+HWND __stdcall CreateWindowExA(DWORD, LPCSTR, LPCSTR, DWORD, int, int, int, int,
+                               HWND, HMENU, HINSTANCE, LPVOID);
+HANDLE __stdcall FindFirstFileA(LPCSTR, WIN32_FIND_DATAA *);
+BOOL __stdcall FindNextFileA(HANDLE, WIN32_FIND_DATAA *);
+BOOL __stdcall FindClose(HANDLE);
+BOOL __stdcall WriteFile(HANDLE, LPCVOID, DWORD, LPDWORD, LPOVERLAPPED);
+int __stdcall wvsprintfA(LPSTR, LPCSTR, void *);
+void __stdcall InitializeCriticalSection(LPCRITICAL_SECTION);
+BOOL __stdcall QueryPerformanceCounter(LARGE_INTEGER *);
+DWORD __stdcall WaitForSingleObject(HANDLE, DWORD);
+HINSTANCE __stdcall ShellExecuteA(HWND, LPCSTR, LPCSTR, LPCSTR, LPCSTR, int);
+typedef struct { int _dummy; } *LPLC_STRINGS; /* obscure Ghidra typedef */
+typedef struct { int _dummy; } FrameInfo;
+
+/* CRT / common externs seen in cleanish — compile-only stubs */
+void __cdecl _free(void *);
+void *__cdecl _malloc(unsigned int);
+void *__cdecl _realloc(void *, unsigned int);
+void __cdecl _memcpy(void *, const void *, unsigned int);
+void *__cdecl _memset(void *, int, unsigned int);
+int __cdecl _sprintf(char *, const char *, ...);
+int __cdecl _strlen(const char *);
+long __cdecl _atol(const char *);
+int __cdecl _tolower(int);
+int __cdecl _isalpha(int);
+int __cdecl _isdigit(int);
+int __cdecl _isxdigit(int);
+unsigned int __cdecl _fread(void *, unsigned int, unsigned int, FILE *);
+typedef struct { int _dummy; } *_ptiddata; /* CRT TLS placeholder */
+/* M4.1.3-R3: FUN_005829e0 → unified __stdcall (callee_stdcall_v2). */
+typedef struct { int _dummy; } *pthreadlocinfo;
+typedef struct { int _dummy; } *pthreadmbcinfo;
+typedef struct { int _dummy; } *_cpinfo;
+typedef struct { int _dummy; } *_locale_t;
+typedef int INTRNCVT_STATUS;
+void __cdecl __cfltcvt(void);
+void __stdcall ___crtInitCritSecNoSpinCount_8(void);
+
+int __cdecl FUN_0040b780();
+int __cdecl FUN_0043a2e0();
+int __cdecl FUN_0047d070();
+int __cdecl FUN_00483860();
+int __cdecl FUN_00485b90();
+int __cdecl FUN_00564b10();
+int __cdecl FUN_00564db0();
+int __cdecl FUN_00567370();
+int __cdecl FUN_005673e0();
+int __stdcall FUN_005829e0(undefined4 a1);
+int __cdecl FUN_00593ec0();
+int __cdecl FUN_00674898();
+extern int DAT_006b6cd0;
+extern int DAT_006b6cdc;
+extern int DAT_006b6ce0;
+extern int DAT_006b6ce4;
+extern int DAT_006b6cec;
+extern int DAT_006cc7a4;
+extern int DAT_0073457c;
+extern int DAT_00735f5c;
+extern unsigned char *DAT_007361f0;
+extern int DAT_0073ad38;
+extern int _DAT_006b6c6c;
+extern int _DAT_006b6c94;
+extern int _DAT_006b6cd4;
+extern int _DAT_006b6cd8;
+extern int _DAT_006b6ce8;
+extern int _DAT_006cc7bc;
+extern int _DAT_006ccc00;
+extern int _DAT_006ccd34;
+int __cdecl FUN_0040b780();
+int __cdecl FUN_0043a2e0();
+int __cdecl FUN_0047d070();
+int __cdecl FUN_00483860();
+int __cdecl FUN_00485b90();
+int __cdecl FUN_00564b10();
+int __cdecl FUN_00564db0();
+int __cdecl FUN_00567370();
+int __cdecl FUN_005673e0();
+int __stdcall FUN_005829e0(undefined4 a1);
+int __cdecl FUN_00593ec0();
+int __cdecl FUN_00674898();
+extern int DAT_006b6cd0;
+extern int DAT_006b6cdc;
+extern int DAT_006b6ce0;
+extern int DAT_006b6ce4;
+extern int DAT_006b6cec;
+extern int DAT_006cc7a4;
+extern int DAT_0073457c;
+extern int DAT_00735f5c;
+extern unsigned char *DAT_007361f0;
+extern int DAT_0073ad38;
+extern int _DAT_006b6c6c;
+extern int _DAT_006b6c94;
+extern int _DAT_006b6cd4;
+extern int _DAT_006b6cd8;
+extern int _DAT_006b6ce8;
+extern int _DAT_006cc7bc;
+extern int _DAT_006ccc00;
+extern int _DAT_006ccd34;
+
+void __fastcall FUN_00485c00(int param_1)
+
+{
+  undefined4 uVar1;
+  undefined4 uVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  float fVar8;
+  int iVar9;
+  char cVar10;
+  int iVar11;
+  float fVar12;
+  float *pfVar13;
+  float *extraout_ECX;
+  float10 fVar14;
+  float10 fVar15;
+  float local_e4;
+  float fStack_cc;
+  float local_c4;
+  float local_c0;
+  float local_bc;
+  float local_b8;
+  float fStack_b4;
+  float local_ac;
+  float local_a8;
+  float fStack_a4;
+  float local_a0;
+  float local_9c;
+  float local_98;
+  float local_90;
+  float local_8c;
+  float local_88;
+  float local_80;
+  float local_7c;
+  float local_70;
+  undefined1 auStack_5c [88];
+  
+  cVar10 = FUN_0043a2e0();
+  if (((cVar10 != '\0') || (DAT_007361f0 == (int *)0x0)) ||
+     ((*DAT_007361f0 != 7 && (*DAT_007361f0 != 0xb)))) {
+    iVar11 = *(int *)(param_1 + 0x438);
+    fVar8 = *(float *)(iVar11 + 0x810);
+    fVar4 = (fVar8 - *(float *)(param_1 + 0x90)) /
+            (*(float *)(param_1 + 0x94) - *(float *)(param_1 + 0x90));
+    local_c4 = DAT_006cc7a4;
+    if ((DAT_006cc7a4 < fVar4) && (local_c4 = fVar4, _DAT_006cc7bc < fVar4)) {
+      local_c4 = 1.0;
+    }
+    local_90 = 0.0;
+    local_8c = 0.0;
+    local_88 = 1.0;
+    if (*(float *)(param_1 + 0x100) == DAT_006cc7a4) {
+      if (*(int *)(param_1 + 0x88) == 0) {
+        fVar4 = _DAT_006b6c6c * *(float *)(param_1 + 0x7c) * ((int)DAT_0073457c) +
+                *(float *)(param_1 + 0x400);
+      }
+      else {
+        fVar4 = (float)(*(int *)(param_1 + 0xb8) + -1) * local_c4;
+      }
+      *(float *)(param_1 + 0x400) = fVar4;
+      fVar4 = (float)(*(int *)(param_1 + 0xb8) + -1);
+      if (fVar4 < *(float *)(param_1 + 0x400)) {
+        *(float *)(param_1 + 0x400) = fVar4;
+      }
+      FUN_005829e0(*(undefined4 *)(param_1 + 0x400));
+    }
+    else {
+      if (*(int *)(param_1 + 0x430) == 0) {
+        fVar4 = *(float *)(param_1 + 0x420) - *(float *)(param_1 + 0x410);
+        fVar5 = *(float *)(param_1 + 0x424) - *(float *)(param_1 + 0x414);
+        fVar12 = *(float *)(param_1 + 0x428) - *(float *)(param_1 + 0x418);
+        fVar6 = ((*(float *)(iVar11 + 100) - *(float *)(param_1 + 0x414)) * fVar5 +
+                (*(float *)(iVar11 + 0x68) - *(float *)(param_1 + 0x418)) * fVar12 +
+                (*(float *)(iVar11 + 0x60) - *(float *)(param_1 + 0x410)) * fVar4) /
+                (fVar5 * fVar5 + fVar12 * fVar12 + fVar4 * fVar4);
+        fVar7 = _DAT_006cc7bc;
+        if ((fVar6 <= _DAT_006cc7bc) && (fVar7 = fVar6, fVar6 < DAT_006cc7a4)) {
+          fVar7 = DAT_006cc7a4;
+        }
+        local_ac = fVar5 * fVar7;
+        fVar5 = *(float *)(param_1 + 0x410);
+        fVar6 = *(float *)(param_1 + 0x414);
+        fVar3 = *(float *)(param_1 + 0x418);
+        FUN_005673e0(*(undefined4 *)(param_1 + 0x100));
+        local_c0 = fVar4 * fVar7 + fVar4 * fVar7 + fVar5;
+        local_bc = local_ac + fVar6 + local_ac;
+        local_b8 = local_a8 + fVar3 + fVar7 * fVar12;
+      }
+      else {
+        iVar9 = *(int *)(param_1 + 0x1c);
+        local_bc = *(float *)(iVar9 + 0x44);
+        local_c0 = *(float *)(iVar9 + 0x40);
+        local_b8 = *(float *)(iVar9 + 0x48);
+      }
+      if (*(int *)(param_1 + 0x104) != 0) {
+        fVar4 = *(float *)(iVar11 + 0x60) - local_c0;
+        fVar5 = *(float *)(iVar11 + 100) - local_bc;
+        fVar12 = *(float *)(iVar11 + 0x68) - local_b8;
+        fVar4 = SQRT(fVar4 * fVar4 + fVar12 * fVar12 + fVar5 * fVar5);
+        if (*(float *)(param_1 + 0x434) < fVar4) {
+          *(undefined4 *)(param_1 + 0x430) = 1;
+        }
+        *(float *)(param_1 + 0x434) = fVar4;
+      }
+    }
+    fVar8 = (fVar8 - *(float *)(param_1 + 0x74)) /
+            (*(float *)(param_1 + 0x78) - *(float *)(param_1 + 0x74));
+    fVar4 = DAT_006cc7a4;
+    if ((DAT_006cc7a4 <= fVar8) && (fVar4 = fVar8, _DAT_006cc7bc < fVar8)) {
+      fVar4 = _DAT_006cc7bc;
+    }
+    FUN_005829e0(fVar4 * ((int)_DAT_006ccd34));
+    iVar11 = *(int *)(param_1 + 0x438);
+    fVar8 = local_c0 - *(float *)(iVar11 + 0x60);
+    fVar4 = local_bc - *(float *)(iVar11 + 100);
+    fVar5 = local_b8 - *(float *)(iVar11 + 0x68);
+    local_e4 = SQRT(fVar8 * fVar8 + fVar4 * fVar4 + fVar5 * fVar5);
+    if (local_e4 < _DAT_006cc7bc) {
+      local_e4 = 1.0;
+    }
+    if (*(int *)(param_1 + 0x70) == 0) {
+      fVar12 = (float)FUN_00674898();
+    }
+    else {
+      iVar11 = FUN_00564db0(local_e4,((int)_DAT_006b6c94) * local_70);
+      fVar12 = (float)(iVar11 << 1);
+    }
+    if (DAT_00735f5c == 0) {
+      *(short *)(*(int *)(param_1 + 0x1c) + 0xc4) = SUB42(fVar12,0);
+    }
+    fVar7 = DAT_0073457c * *(float *)(param_1 + 0x134) + *(float *)(param_1 + 0x404);
+    *(float *)(param_1 + 0x404) = fVar7;
+    fVar6 = (float)(*(int *)(param_1 + 0x138) + -1);
+    if (fVar6 < fVar7) {
+      *(float *)(param_1 + 0x404) = fVar6;
+    }
+    FUN_005829e0(*(undefined4 *)(param_1 + 0x404));
+    iVar11 = *(int *)(param_1 + 0x438);
+    uVar1 = *(undefined4 *)(iVar11 + 100);
+    uVar2 = *(undefined4 *)(iVar11 + 0x68);
+    *(undefined4 *)(param_1 + 0x30) = *(undefined4 *)(iVar11 + 0x60);
+    *(undefined4 *)(param_1 + 0x34) = uVar1;
+    *(undefined4 *)(param_1 + 0x38) = uVar2;
+    if (_DAT_006b6cd4 == DAT_006cc7a4) {
+      if (*(int *)(param_1 + 0xfc) == 0) {
+        fVar14 = (float10)FUN_00564b10();
+        fVar15 = (float10)FUN_00564b10();
+        fVar14 = ((float10)(float)fVar14 / fVar15) * (float10)*(float *)(param_1 + 0xec);
+      }
+      else {
+        fVar6 = *(float *)(param_1 + 0xf4);
+        fVar7 = *(float *)(param_1 + 0xec);
+        fVar3 = *(float *)(param_1 + 0xec);
+        fVar15 = (float10)FUN_00564b10();
+        fVar14 = (float10)FUN_00564b10();
+        fVar14 = fVar14 * (float10)(float)((float10)((fVar6 - fVar7) * local_c4 + fVar3) / fVar15);
+      }
+    }
+    else {
+      fVar14 = (float10)FUN_00564b10();
+      fVar15 = (float10)FUN_00564b10();
+      fVar14 = ((float10)(float)fVar14 / fVar15) * (float10)((int)_DAT_006b6cd4);
+    }
+    *(float *)(param_1 + 0x38) =
+         (float)((fVar14 * (float10)local_e4 - (float10)local_7c) +
+                (float10)*(float *)(param_1 + 0x38));
+    if (_DAT_006b6cd8 == DAT_006cc7a4) {
+      if (*(int *)(param_1 + 0xfc) == 0) {
+        fVar14 = (float10)FUN_00564b10();
+        fVar15 = (float10)FUN_00564b10();
+        fVar14 = ((float10)(float)fVar14 / fVar15) * (float10)*(float *)(param_1 + 0xf0);
+      }
+      else {
+        fVar6 = *(float *)(param_1 + 0xf8);
+        fVar7 = *(float *)(param_1 + 0xf0);
+        fVar3 = *(float *)(param_1 + 0xf0);
+        fVar15 = (float10)FUN_00564b10();
+        fVar14 = (float10)FUN_00564b10();
+        fVar14 = fVar14 * (float10)(float)((float10)((fVar6 - fVar7) * local_c4 + fVar3) / fVar15);
+      }
+    }
+    else {
+      fVar14 = (float10)FUN_00564b10();
+      fVar15 = (float10)FUN_00564b10();
+      fVar14 = ((float10)(float)fVar14 / fVar15) * (float10)((int)_DAT_006b6cd8);
+    }
+    fVar15 = (float10)((int)_DAT_006cc7bc) / (float10)local_e4;
+    fVar14 = (float10)local_80 + fVar14 * (float10)local_e4;
+    *(float *)(param_1 + 0x30) =
+         (float)((float10)(float)((float10)fVar4 * fVar15 * (float10)local_88 -
+                                 (float10)(float)((float10)fVar5 * fVar15) * (float10)local_8c) *
+                fVar14) + *(float *)(param_1 + 0x30);
+    *(float *)(param_1 + 0x34) =
+         (float)(((float10)(float)((float10)fVar5 * fVar15) * (float10)local_90 -
+                 (float10)local_88 * (float10)fVar8 * fVar15) * fVar14 +
+                (float10)*(float *)(param_1 + 0x34));
+    if (DAT_006b6cdc == DAT_006cc7a4) {
+      local_a0 = *(float *)(param_1 + 0xe0);
+    }
+    else {
+      local_a0 = DAT_006b6cdc;
+    }
+    if (DAT_006b6ce0 == DAT_006cc7a4) {
+      local_9c = *(float *)(param_1 + 0xe4);
+    }
+    else {
+      local_9c = DAT_006b6ce0;
+    }
+    if (DAT_006b6ce4 == DAT_006cc7a4) {
+      local_98 = *(float *)(param_1 + 0xe8);
+    }
+    else {
+      local_98 = DAT_006b6ce4;
+    }
+    FUN_00485c00(&local_a0,&local_a0,*(int *)(param_1 + 0x438) + 0x90);
+    *(float *)(param_1 + 0x30) = local_ac + *(float *)(param_1 + 0x30);
+    *(float *)(param_1 + 0x34) = local_a8 + *(float *)(param_1 + 0x34);
+    *(float *)(param_1 + 0x38) = fStack_a4 + *(float *)(param_1 + 0x38);
+    fVar8 = *(float *)(param_1 + 0x30);
+    fVar4 = *(float *)(param_1 + 0x34);
+    fVar5 = *(float *)(param_1 + 0x38);
+    FUN_00567370();
+    pfVar13 = (float *)FUN_00485b90();
+    *pfVar13 = *pfVar13 - local_bc;
+    pfVar13[1] = pfVar13[1] - local_b8;
+    pfVar13[2] = pfVar13[2] - fStack_b4;
+    fVar6 = pfVar13[1];
+    fVar7 = pfVar13[2];
+    *(float *)(param_1 + 0x50) = *pfVar13 + *(float *)(param_1 + 0x50);
+    *(float *)(param_1 + 0x54) = fVar6 + *(float *)(param_1 + 0x54);
+    *(float *)(param_1 + 0x58) = fVar7 + *(float *)(param_1 + 0x58);
+    *(float *)(param_1 + 0x30) = (fVar8 - fStack_cc) + *(float *)(param_1 + 0x50) + fStack_cc;
+    *(float *)(param_1 + 0x34) = *(float *)(param_1 + 0x54) + (fVar4 - fVar12) + fVar12;
+    *(float *)(param_1 + 0x38) = *(float *)(param_1 + 0x58) + (fVar5 - local_c4) + local_c4;
+    FUN_005829e0(*(undefined4 *)(param_1 + 0x400));
+    FUN_00674898();
+    FUN_00483860(&local_9c);
+    FUN_0040b780(&local_9c);
+    iVar9 = DAT_00735f5c;
+    iVar11 = *(int *)(param_1 + 0x438);
+    fVar8 = *(float *)(iVar11 + 0x60) - fStack_cc;
+    fVar12 = *(float *)(iVar11 + 100) - fVar12;
+    local_c4 = *(float *)(iVar11 + 0x68) - local_c4;
+    fVar8 = SQRT(fVar8 * fVar8 + fVar12 * fVar12 + local_c4 * local_c4);
+    if (DAT_00735f5c == 0) {
+      *(float *)(*(int *)(param_1 + 0x1c) + 0xb0) = fVar8;
+    }
+    fVar4 = _DAT_006b6ce8;
+    *(undefined4 *)(*(int *)(param_1 + 0x1c) + 0xbc) = DAT_006b6cd0;
+    *(float *)(param_1 + 0x448) = fVar4 * *(float *)(param_1 + 0x43c);
+    FUN_00593ec0(DAT_0073457c,0,0);
+    uVar1 = DAT_006b6cec;
+    fVar8 = fVar8 + *extraout_ECX;
+    if (fVar8 < _DAT_006ccc00) {
+      fVar8 = _DAT_006ccc00;
+    }
+    if ((*(int *)(param_1 + 0x46c) != 0) && (iVar9 == 0)) {
+      *(float *)(*(int *)(param_1 + 0x1c) + 0xb4) = fVar8 + *extraout_ECX;
+      *(undefined4 *)(*(int *)(param_1 + 0x1c) + 0xb8) = uVar1;
+    }
+    FUN_0047d070(*(undefined4 *)(param_1 + 0x1c),auStack_5c,DAT_0073ad38);
+  }
+  return;
+}

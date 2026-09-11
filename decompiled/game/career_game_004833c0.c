@@ -1,0 +1,2 @@
+/* spd-match: far pct=25.00 flags=/O2 /c /nologo /TC method=m39 source=m39/4.1.G.4-float/va_004833C0 */
+extern int __cdecl FUN_00564db0(float, float); extern float _DAT_006b6c9c; extern float _DAT_006b6ca0; extern float _DAT_006cc79c; extern float _DAT_006cc9f8; float __cdecl FUN_004833c0(float a, float b) { float v1 = _DAT_006b6c9c * _DAT_006b6ca0; short s1 = (short)FUN_00564db0(a, v1); short s2 = (short)FUN_00564db0(b * _DAT_006cc79c + a, v1); return (float)((s2 - s1) * 2) * _DAT_006cc9f8; }

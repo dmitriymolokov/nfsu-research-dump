@@ -1,0 +1,2 @@
+/* spd-match: far pct=45.61 flags=/Ob2 /c /nologo /TP method=m39 source=m39/m39/va_005556E0 */
+extern "C" void* __stdcall FUN_004134c0(void* p); extern "C" int __stdcall FUN_004f6670(); struct Vehicle { void FUN_005556e0(int p1, int index); }; void Vehicle::FUN_005556e0(int p1, int index) { if (index >= 0 && index < 4) { FUN_004134c0(this); int val = FUN_004f6670(); *(int*)((char*)this + index * 4 + 0x40) = val; } }

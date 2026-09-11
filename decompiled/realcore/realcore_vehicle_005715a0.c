@@ -1,0 +1,2 @@
+/* spd-match: far pct=19.44 flags=/O1 /c /nologo /TC method=m39 source=m39/m39/va_005715A0 */
+extern void __cdecl _free(void*); extern int __cdecl FUN_0056a0d0(); extern void __stdcall FUN_00671102(void*); void __fastcall FUN_005715a0(int* obj) { int* esi = (int*)*obj; while (esi != obj) { int* eax = (int*)*esi; int* ecx = (int*)*(esi + 1); *ecx = (int)eax; *(int**)((char*)eax + 4) = ecx; FUN_0056a0d0(); FUN_00671102(esi); esi = (int*)*obj; } }

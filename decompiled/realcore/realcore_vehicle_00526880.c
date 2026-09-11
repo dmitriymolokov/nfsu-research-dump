@@ -1,0 +1,2 @@
+/* spd-match: far pct=42.19 flags=/Og /c /nologo /TC method=m39 source=m39/m39/va_00526880 */
+extern void __cdecl FUN_0064bbd0(void); extern void __cdecl FUN_0064b510(void*); extern void __cdecl FUN_0064b580(void); extern void __cdecl FUN_0064b5a0(void); void FUN_00526880(void* ecx_val) { int* esi; int* p; esi = *(int**)((char*)ecx_val + 0x1760); if (esi) { if (*esi) FUN_0064bbd0(); FUN_0064b510(&p); FUN_0064b580(); ((void (__stdcall *)(void*, int*))(*(int**)(p))[1])(p, esi); FUN_0064b5a0(); } }

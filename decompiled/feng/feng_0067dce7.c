@@ -1,0 +1,2 @@
+/* spd-match: far pct=13.21 flags=/O2 /c /nologo /TP method=m39 source=m39/4.1.G.1-filter100/va_0067DCE7 */
+extern double _DAT_006cce38; extern int __cdecl FUN_00672f2e(double, int, int); extern double __cdecl FUN_00681f2f(double); int __cdecl FUN_0067dce7(int param_1, double param_2) { double dVar1; if ((FUN_00672f2e(param_2, param_1, param_1) & 0x90) == 0) { dVar1 = FUN_00681f2f(param_2); if (dVar1 == param_2) { dVar1 = param_2 / _DAT_006cce38; if (FUN_00681f2f(dVar1) == dVar1) { return 2; } return 1; } } return 0; }

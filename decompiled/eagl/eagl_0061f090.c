@@ -1,0 +1,2 @@
+/* spd-match: far pct=41.51 flags=/O1 /c /nologo /TC method=m39 source=m39/m39/va_0061F090 */
+extern void* DAT_007096a4; void __stdcall FUN_0061ef80(void* p); void __fastcall FUN_0061f090(void* pThis, int edx_unused, int arg) { FUN_0061ef80((void*)arg); if (DAT_007096a4 == (void*)arg) { int* p = *(int**)((char*)pThis + 0x2c); while (p && *(p + 2)) { int* pNext = (int*)*(int*)((char*)p + 0xc); p = (int*)*(pNext + 1); } DAT_007096a4 = p; } }

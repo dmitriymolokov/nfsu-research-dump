@@ -1,0 +1,2 @@
+/* spd-match: close pct=88.46 flags=/Og /Gr /c /nologo /TC method=m39 source=m39/m39/va_0052A5E0 */
+extern void* __cdecl FUN_0052e3f0(); void FUN_0052a5e0(void* p) { int* esi = (int*)p; int ebx = 0; *(char*)((char*)esi + 0xc) = 0; esi[4] = 0; esi[1] = 0; esi[2] = 0; { int* eax = (int*)FUN_0052e3f0(); *eax = 0x6bef50; esi[0x234/4] = 0; esi[0x230/4] = 0; esi[0x23c/4] = 0; esi[0x238/4] = 0; esi[0x248/4] = -1; esi[0x24c/4] = -1; *esi = 0x6bef7c; } }

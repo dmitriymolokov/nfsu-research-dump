@@ -1,0 +1,6 @@
+/* spd-match: far pct=7.25 flags=/O2 /c /nologo /TC method=m39 source=m39/m39/va_00574C20 */
+/* Decompiled from Speed.exe @ 00574c20 */
+/* Module: Realcore_Vehicle */
+/* Ghidra DecompileAll */
+typedef int undefined4; extern void __stdcall FUN_00574b70(undefined4); extern int __stdcall FUN_00674898(void); int __stdcall FUN_00574c20(undefined4 param_1, float param_2, char param_3, int edi) { int ecx; int esi; float *pfVar5; esi = -1; ecx = 0; pfVar5 = (float *)(edi + 0x18); do { char cVar1; int iVar7; cVar1 = *(char *)(edi + 0x24 + ecx); iVar7 = esi; if (cVar1 <= param_3) { if (*(int *)(edi + (ecx * 4)) != 0) { if (esi != -1) { char cVar2; cVar2 = *(char *)(edi + 0x24 + esi); iVar7 = esi; if (cVar2 < cVar1) goto LAB_00574ca5; if (cVar1 == cVar2) { FUN_00574b70(*(undefined4 *)(edi + 0xc + esi * 4)); if (FUN_00674898() < FUN_00674898()) goto LAB_00574ca5; } } if ((cVar1 < param_3) || (*pfVar5 < param_2)) { iVar7 = ecx; } } } LAB_00574ca5: ecx++; pfVar5++; esi = iVar7; } while (ecx < 3); if (esi < 0) return 0; *(float *)(edi + 0x18 + esi * 4) = param_2; *(undefined4 *)(edi + esi * 4) = param_1; *(undefined4 *)(edi + 0xc + esi * 4) = 0; *(char *)(esi + 0x24 + edi) = param_3; return 1; }
+

@@ -1,0 +1,2 @@
+/* spd-match: far pct=15.00 flags=/O2 /c /nologo /TC method=m39 source=m39/4.1.G.45-s1/va_00544390 */
+extern int* DAT_0073554c; void __stdcall FUN_005437f0(void*, void*, void*, void*, void*); void __stdcall FUN_00542400(void*, void*); void __stdcall FUN_00542c20(void*, void*); int __cdecl FUN_00544390(void* a1, void* a2, void* a3, void* a4, void* a5) { if (*DAT_0073554c) { FUN_005437f0(a5, a3, a2, a1, 0); } else { FUN_00542400(a1, a5); FUN_00542c20(a2, a5); } return 1; }

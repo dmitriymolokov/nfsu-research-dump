@@ -1,0 +1,3 @@
+/* spd-match: matched pct=100.00 flags=/O1 /c /nologo /TC method=m39 source=m39/3.9.26.2/va_00689420 */
+#include "feng_tracker.h"
+DEFINE_FENG_UNWIND_THUNK(FUN_00689420, "UndergroundMagazineGiveth", -0x10)
