@@ -1,0 +1,5 @@
+Full dump (too large for NFSMods 50 MB cap):
+
+https://github.com/dmitriymolokov/nfsu-research-dump
+
+Read README.txt in this folder for installation steps.
