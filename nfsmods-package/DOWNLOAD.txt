@@ -1,4 +1,4 @@
-Full dump (too large for NFSMods 50 MB cap):
+Full dump:
 
 https://github.com/dmitriymolokov/nfsu-research-dump
 

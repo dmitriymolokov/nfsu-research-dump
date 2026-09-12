@@ -3,9 +3,6 @@ NFSU1 Speed.exe research dump (Ghidra pseudo-C)
 
 This is NOT a game mod. Nothing is installed into your NFS Underground folder.
 
-The full research dump (~57 MB, ~10,000 .c files) is hosted on GitHub because
-NFSMods has a 50 MB upload limit.
-
 DOWNLOAD (required)
 -------------------
 https://github.com/dmitriymolokov/nfsu-research-dump
