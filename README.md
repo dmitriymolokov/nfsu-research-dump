@@ -90,10 +90,10 @@ So: you have a **full function list and bodies to read**, and a **small high-con
 
 ## Buy me a beer
 
-If this dump saved you time, a beer is welcome. **USDT on TRON (TRC-20) only** — not ERC-20, not BEP-20.
+If this dump saved you time, a beer is welcome. **USDT on BSC (BEP-20) only**.
 
 ```
-THobRFSAg2rxRDyTWiEv4e3WA8ogiCsm4m
+0x17ca987c9f04522b618ab91d6d2b78890160fd30
 ```
 
 ## License
